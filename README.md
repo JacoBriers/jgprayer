@@ -19,7 +19,7 @@ can be added to a phone by scanning a QR code.
 
 | File | Purpose |
 |---|---|
-| `index.html` | Landing page the QR code points at. Offers download, Google Calendar, and subscribe. |
+| `index.html` | Landing page the QR code points at. Offers a direct download and a Google Calendar link. |
 | `sunday-prayer.ics` | The calendar file itself (RFC 5545). |
 | `qr.png` / `qr.svg` | Print-ready QR code for `https://jacobriers.github.io/jgprayer/`. |
 | `tools/make_qr.py` | Regenerates the QR images. |
@@ -46,9 +46,14 @@ Two things to watch:
    python3 -c "d=open('sunday-prayer.ics','rb').read(); assert d.count(b'\n')==d.count(b'\r\n')"
    ```
 
-2. **People who *added* the event keep their old copy.** Only those who used
-   *Subscribe* will see edits. The QR code itself does not need reprinting — it
-   points at the page, not at the file.
+2. **People who already added the event keep their old copy.** Nothing pushes an
+   edit out to them — they would need to scan again and re-add. So settle details
+   like the location *before* distributing the QR widely. The QR code itself never
+   needs reprinting for a content change; it points at the page, not the file.
+
+   A `webcal://` subscribe link was considered and deliberately left out: Android
+   has no default handler for the scheme, and Google Calendar's "add by URL" is
+   desktop-only, so it fails for most phone users.
 
 Keep `index.html` in step with the `.ics`; the visible times are written into the
 page and into the Google Calendar link.
