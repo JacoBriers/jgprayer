@@ -101,7 +101,7 @@
     color: var(--jg-navy);
   }
 
-  .actions { display: grid; gap: .75rem; }
+  .actions { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
 
   .jg-button {
     display: inline-flex;
@@ -109,7 +109,7 @@
     justify-content: center;
     gap: .5rem;
     min-height: 48px;
-    padding: .875rem 1.75rem;
+    padding: .875rem 1rem;
     border-radius: var(--radius-pill);
     border: 2px solid transparent;
     font-family: inherit;
@@ -131,16 +131,8 @@
     box-shadow: 0 12px 30px #0077c059;
   }
 
-  .jg-button--secondary {
-    background: var(--jg-white);
-    border-width: 1px;
-    border-color: var(--jg-border-soft);
-    color: var(--jg-navy);
-  }
-
   @media (hover: hover) {
     .jg-button:hover { transform: translateY(-2px); }
-    .jg-button--secondary:hover { border-color: var(--jg-blue); color: var(--jg-blue); }
   }
 
   .jg-button:focus-visible {
@@ -153,9 +145,16 @@
     .jg-button:hover { transform: none; }
   }
 
-  @media (max-width: 380px) {
+  @media (max-width: 430px) {
     .card { padding: 2rem 1.25rem 1.75rem; }
-    .jg-button { padding: .875rem 1rem; }
+    .jg-button { padding: .875rem .5rem; font-size: .9rem; }
+  }
+
+  /* Keep both labels on one line on narrow phones, including when the
+     Poppins webfont fails and the wider fallback stack is used. */
+  @media (max-width: 380px) {
+    .actions { gap: .5rem; }
+    .jg-button { padding: .875rem .35rem; font-size: .82rem; }
   }
 </style>
 </head>
@@ -176,7 +175,7 @@
 
     <div class="actions">
       <a class="jg-button jg-button--primary" href="sunday-prayer.ics" download>Add to calendar</a>
-      <a class="jg-button jg-button--secondary" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Sunday+Prayer&amp;dates=20260920T133000Z/20260920T134500Z&amp;recur=RRULE:FREQ%3DWEEKLY;BYDAY%3DSU;UNTIL%3D20271231T235959Z" target="_blank" rel="noopener">Add to Google Calendar</a>
+      <a class="jg-button jg-button--primary" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Sunday+Prayer&amp;dates=20260920T133000Z/20260920T134500Z&amp;recur=RRULE:FREQ%3DWEEKLY;BYDAY%3DSU;UNTIL%3D20271231T235959Z" target="_blank" rel="noopener">Google Calendar</a>
     </div>
   </main>
 </body>
