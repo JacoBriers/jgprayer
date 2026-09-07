@@ -68,19 +68,12 @@
   }
 
   h1 {
-    margin: 0 0 .75rem;
+    margin: 0 0 1.75rem;
     font-size: clamp(1.9rem, 7vw, 2.5rem);
     line-height: 1.15;
     font-weight: 600;
     letter-spacing: -.025em;
     color: var(--jg-navy-ink);
-  }
-
-  .lead {
-    margin: 0 auto 1.75rem;
-    max-width: 26rem;
-    font-size: 1.05rem;
-    color: var(--jg-prose);
   }
 
   .details {
@@ -155,12 +148,6 @@
     outline-offset: 3px;
   }
 
-  .note {
-    margin: 1.25rem 0 0;
-    font-size: .8125rem;
-    color: var(--jg-prose-muted);
-  }
-
   @media (prefers-reduced-motion: reduce) {
     .jg-button { transition: none; }
     .jg-button:hover { transform: none; }
@@ -176,8 +163,6 @@
   <main class="card">
     <p class="kicker">Weekly gathering</p>
     <h1>Sunday Prayer</h1>
-    <p class="lead">Fifteen minutes of prayer together, every Sunday afternoon. Add it to your calendar so you don&rsquo;t miss it.</p>
-
     <dl class="details">
       <div>
         <dt>When</dt>
@@ -187,19 +172,12 @@
         <dt>Time</dt>
         <dd>15:30 &ndash; 15:45 <span aria-hidden="true">&middot;</span> SAST</dd>
       </div>
-      <div>
-        <dt>Running</dt>
-        <dd>20 Sep 2026 &ndash; 26 Dec 2027</dd>
-      </div>
     </dl>
 
     <div class="actions">
       <a class="jg-button jg-button--primary" href="sunday-prayer.ics" download>Add to calendar</a>
       <a class="jg-button jg-button--secondary" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Sunday+Prayer&amp;dates=20260920T133000Z/20260920T134500Z&amp;recur=RRULE:FREQ%3DWEEKLY;BYDAY%3DSU;UNTIL%3D20271231T235959Z" target="_blank" rel="noopener">Add to Google Calendar</a>
-      <a class="jg-button jg-button--secondary" href="webcal://jacobriers.github.io/jgprayer/sunday-prayer.ics">Subscribe &mdash; stays up to date</a>
     </div>
-
-    <p class="note">Subscribing keeps the event in step if the details ever change. Adding it once saves a fixed copy to your calendar.</p>
   </main>
 </body>
 </html>
